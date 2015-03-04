@@ -20,12 +20,14 @@ namespace OwinLoggingDashboard
         {
             var listener = new InMemoryTraceListener();
             Trace.Listeners.Add(listener);
-            return new Dashboard(listener, WebApp.Start(binding, app =>
-            {
-                app.UseErrorPage();
-                app.Use(typeof(LoggingDisplayMiddleware), listener);
-                app.UseWelcomePage("/");
-            }));
+            var webapp = WebApp.Start(binding, app =>
+               {
+                   app.UseErrorPage();
+                   app.Use(typeof(LoggingDisplayMiddleware), listener);
+                   app.UseWelcomePage("/");
+               });
+            Trace.TraceInformation("Dashboard started at " + binding);
+            return new Dashboard(listener, webapp);
         }
 
         public void Dispose()
