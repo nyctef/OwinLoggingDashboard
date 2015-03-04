@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AppFunc = System.Func<System.Collections.Generic.IDictionary<string, object>, System.Threading.Tasks.Task>;
 
 namespace OwinLoggingDashboard
 {
@@ -27,11 +28,12 @@ namespace OwinLoggingDashboard
             m_WebApp.Dispose();
         }
 
-        public class Startup
+        private class Startup
         {
             public void Configuration(IAppBuilder app)
             {
                 app.UseErrorPage();
+                app.Use(typeof(LoggingDisplayMiddleware));
                 app.UseWelcomePage("/");
             }
         }
