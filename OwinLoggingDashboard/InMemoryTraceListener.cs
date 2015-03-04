@@ -22,6 +22,7 @@ namespace OwinLoggingDashboard
         public override void WriteLine(string message)
         {
             m_Messages.Add(m_CurrentMessage + message);
+            m_CurrentMessage = "";
         }
     }
 }
