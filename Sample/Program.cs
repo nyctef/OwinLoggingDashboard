@@ -15,6 +15,8 @@ namespace Sample
             const string endpoint = "http://localhost:12345/";
             using (var dashboard = Dashboard.Start(endpoint))
             {
+                Trace.TraceInformation("this is an info message");
+                Trace.WriteLine("this is a WriteLine call");
                 Process.Start(endpoint);
                 Console.ReadLine();
             }

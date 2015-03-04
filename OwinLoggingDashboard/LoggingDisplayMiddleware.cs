@@ -18,7 +18,9 @@ namespace OwinLoggingDashboard
 
         public async override Task Invoke(IOwinContext context)
         {
-            await Next.Invoke(context);
+            context.Response.ContentType = "text/plain";
+            await context.Response.WriteAsync(String.Join("\n", m_Listener.Messages));
+            return;
         }
     }
 }
