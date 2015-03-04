@@ -35,13 +35,5 @@ namespace OwinLoggingDashboard
             Trace.Listeners.Remove(m_Listener);
             m_WebApp.Dispose();
         }
-
-        private class Startup
-        {
-            public void Configuration(IAppBuilder app)
-            {
-                
-            }
-        }
     }
 }
