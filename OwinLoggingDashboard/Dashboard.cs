@@ -22,9 +22,7 @@ namespace OwinLoggingDashboard
             Trace.Listeners.Add(listener);
             var webapp = WebApp.Start(binding, app =>
                {
-                   app.UseErrorPage();
                    app.Use(typeof(LoggingDisplayMiddleware), listener);
-                   app.UseWelcomePage("/");
                });
             Trace.TraceInformation("Dashboard started at " + binding);
             return new Dashboard(listener, webapp);
