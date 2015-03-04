@@ -9,8 +9,11 @@ namespace OwinLoggingDashboard
 {
     class LoggingDisplayMiddleware : OwinMiddleware
     {
-        public LoggingDisplayMiddleware(OwinMiddleware next) : base(next)
+        private readonly InMemoryTraceListener m_Listener;
+
+        public LoggingDisplayMiddleware(OwinMiddleware next, InMemoryTraceListener listener) : base(next)
         {
+            m_Listener = listener;
         }
 
         public async override Task Invoke(IOwinContext context)

@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Dashboard.cs" />
     <Compile Include="ForceReferenceTo.cs" />
+    <Compile Include="InMemoryTraceListener.cs" />
     <Compile Include="LoggingDisplayMiddleware.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
