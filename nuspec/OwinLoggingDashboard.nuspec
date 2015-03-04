@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>OwinLoggingDashboard</id>
+        <version>0.1.0</version>
+        <authors>Mark Jordan</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>[experimental] View live system logs as an OWIN dashboard</description>
+        <dependencies>
+            <dependency id="Microsoft.Owin.Host.HttpListener" version="3.0.1" />
+            <dependency id="Owin" version="1.0.0" />
+            <dependency id="Microsoft.Owin" version="3.0.1" />
+            <dependency id="Microsoft.Owin.Hosting" version="3.0.1" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="..\OwinLoggingDashboard\bin\Debug\OwinLoggingDashboard.dll" target="OwinLoggingDashboard.dll" />
+    </files>
+</package>
