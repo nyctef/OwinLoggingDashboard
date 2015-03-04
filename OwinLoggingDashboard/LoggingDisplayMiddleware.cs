@@ -19,7 +19,7 @@ namespace OwinLoggingDashboard
         public async override Task Invoke(IOwinContext context)
         {
             context.Response.ContentType = "text/plain";
-            await context.Response.WriteAsync(String.Join("\n", m_Listener.Messages));
+            await context.Response.WriteAsync(String.Join("\n", m_Listener.Messages.Reverse()));
             return;
         }
     }
