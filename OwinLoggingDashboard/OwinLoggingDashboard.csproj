@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net45</TargetFramework>
-    <Version>0.3</Version>
+    <Version>0.4</Version>
     <Description>[experimental] View live system logs as an OWIN dashboard</Description>
   </PropertyGroup>
   <ItemGroup>
